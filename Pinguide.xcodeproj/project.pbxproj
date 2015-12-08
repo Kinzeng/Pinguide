@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FE8197E1C175BB30022E447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8197D1C175BB30022E447 /* main.m */; };
+		1FE819811C175BB30022E447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819801C175BB30022E447 /* AppDelegate.m */; };
+		1FE819841C175BB30022E447 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819831C175BB30022E447 /* FirstViewController.m */; };
+		1FE819871C175BB30022E447 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819861C175BB30022E447 /* SecondViewController.m */; };
+		1FE8198A1C175BB30022E447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE819881C175BB30022E447 /* Main.storyboard */; };
+		1FE8198C1C175BB30022E447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE8198B1C175BB30022E447 /* Assets.xcassets */; };
+		1FE8198F1C175BB30022E447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE8198D1C175BB30022E447 /* LaunchScreen.storyboard */; };
+		1FE8199A1C175BB30022E447 /* PinguideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819991C175BB30022E447 /* PinguideTests.m */; };
+		1FE819A51C175BB30022E447 /* PinguideUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819A41C175BB30022E447 /* PinguideUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FE819961C175BB30022E447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FE819711C175BB30022E447 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FE819781C175BB30022E447;
+			remoteInfo = Pinguide;
+		};
+		1FE819A11C175BB30022E447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FE819711C175BB30022E447 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FE819781C175BB30022E447;
+			remoteInfo = Pinguide;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FE819791C175BB30022E447 /* Pinguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE8197D1C175BB30022E447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1FE8197F1C175BB30022E447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1FE819801C175BB30022E447 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1FE819821C175BB30022E447 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		1FE819831C175BB30022E447 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1FE819851C175BB30022E447 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		1FE819861C175BB30022E447 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1FE819891C175BB30022E447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1FE8198B1C175BB30022E447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FE8198E1C175BB30022E447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1FE819901C175BB30022E447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE819951C175BB30022E447 /* PinguideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinguideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE819991C175BB30022E447 /* PinguideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinguideTests.m; sourceTree = "<group>"; };
+		1FE8199B1C175BB30022E447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE819A01C175BB30022E447 /* PinguideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinguideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE819A41C175BB30022E447 /* PinguideUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinguideUITests.m; sourceTree = "<group>"; };
+		1FE819A61C175BB30022E447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FE819761C175BB30022E447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE819921C175BB30022E447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE8199D1C175BB30022E447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FE819701C175BB30022E447 = {
+			isa = PBXGroup;
+			children = (
+				1FE8197B1C175BB30022E447 /* Pinguide */,
+				1FE819981C175BB30022E447 /* PinguideTests */,
+				1FE819A31C175BB30022E447 /* PinguideUITests */,
+				1FE8197A1C175BB30022E447 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FE8197A1C175BB30022E447 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FE819791C175BB30022E447 /* Pinguide.app */,
+				1FE819951C175BB30022E447 /* PinguideTests.xctest */,
+				1FE819A01C175BB30022E447 /* PinguideUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FE8197B1C175BB30022E447 /* Pinguide */ = {
+			isa = PBXGroup;
+			children = (
+				1FE8197F1C175BB30022E447 /* AppDelegate.h */,
+				1FE819801C175BB30022E447 /* AppDelegate.m */,
+				1FE819821C175BB30022E447 /* FirstViewController.h */,
+				1FE819831C175BB30022E447 /* FirstViewController.m */,
+				1FE819851C175BB30022E447 /* SecondViewController.h */,
+				1FE819861C175BB30022E447 /* SecondViewController.m */,
+				1FE819881C175BB30022E447 /* Main.storyboard */,
+				1FE8198B1C175BB30022E447 /* Assets.xcassets */,
+				1FE8198D1C175BB30022E447 /* LaunchScreen.storyboard */,
+				1FE819901C175BB30022E447 /* Info.plist */,
+				1FE8197C1C175BB30022E447 /* Supporting Files */,
+			);
+			path = Pinguide;
+			sourceTree = "<group>";
+		};
+		1FE8197C1C175BB30022E447 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FE8197D1C175BB30022E447 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FE819981C175BB30022E447 /* PinguideTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FE819991C175BB30022E447 /* PinguideTests.m */,
+				1FE8199B1C175BB30022E447 /* Info.plist */,
+			);
+			path = PinguideTests;
+			sourceTree = "<group>";
+		};
+		1FE819A31C175BB30022E447 /* PinguideUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1FE819A41C175BB30022E447 /* PinguideUITests.m */,
+				1FE819A61C175BB30022E447 /* Info.plist */,
+			);
+			path = PinguideUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FE819781C175BB30022E447 /* Pinguide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE819A91C175BB30022E447 /* Build configuration list for PBXNativeTarget "Pinguide" */;
+			buildPhases = (
+				1FE819751C175BB30022E447 /* Sources */,
+				1FE819761C175BB30022E447 /* Frameworks */,
+				1FE819771C175BB30022E447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pinguide;
+			productName = Pinguide;
+			productReference = 1FE819791C175BB30022E447 /* Pinguide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FE819941C175BB30022E447 /* PinguideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE819AC1C175BB30022E447 /* Build configuration list for PBXNativeTarget "PinguideTests" */;
+			buildPhases = (
+				1FE819911C175BB30022E447 /* Sources */,
+				1FE819921C175BB30022E447 /* Frameworks */,
+				1FE819931C175BB30022E447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FE819971C175BB30022E447 /* PBXTargetDependency */,
+			);
+			name = PinguideTests;
+			productName = PinguideTests;
+			productReference = 1FE819951C175BB30022E447 /* PinguideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1FE8199F1C175BB30022E447 /* PinguideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE819AF1C175BB30022E447 /* Build configuration list for PBXNativeTarget "PinguideUITests" */;
+			buildPhases = (
+				1FE8199C1C175BB30022E447 /* Sources */,
+				1FE8199D1C175BB30022E447 /* Frameworks */,
+				1FE8199E1C175BB30022E447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FE819A21C175BB30022E447 /* PBXTargetDependency */,
+			);
+			name = PinguideUITests;
+			productName = PinguideUITests;
+			productReference = 1FE819A01C175BB30022E447 /* PinguideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FE819711C175BB30022E447 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = LMMSKZ;
+				TargetAttributes = {
+					1FE819781C175BB30022E447 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					1FE819941C175BB30022E447 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1FE819781C175BB30022E447;
+					};
+					1FE8199F1C175BB30022E447 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1FE819781C175BB30022E447;
+					};
+				};
+			};
+			buildConfigurationList = 1FE819741C175BB30022E447 /* Build configuration list for PBXProject "Pinguide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FE819701C175BB30022E447;
+			productRefGroup = 1FE8197A1C175BB30022E447 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FE819781C175BB30022E447 /* Pinguide */,
+				1FE819941C175BB30022E447 /* PinguideTests */,
+				1FE8199F1C175BB30022E447 /* PinguideUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FE819771C175BB30022E447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE8198F1C175BB30022E447 /* LaunchScreen.storyboard in Resources */,
+				1FE8198C1C175BB30022E447 /* Assets.xcassets in Resources */,
+				1FE8198A1C175BB30022E447 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE819931C175BB30022E447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE8199E1C175BB30022E447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FE819751C175BB30022E447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE819871C175BB30022E447 /* SecondViewController.m in Sources */,
+				1FE819811C175BB30022E447 /* AppDelegate.m in Sources */,
+				1FE819841C175BB30022E447 /* FirstViewController.m in Sources */,
+				1FE8197E1C175BB30022E447 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE819911C175BB30022E447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE8199A1C175BB30022E447 /* PinguideTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE8199C1C175BB30022E447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE819A51C175BB30022E447 /* PinguideUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FE819971C175BB30022E447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FE819781C175BB30022E447 /* Pinguide */;
+			targetProxy = 1FE819961C175BB30022E447 /* PBXContainerItemProxy */;
+		};
+		1FE819A21C175BB30022E447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FE819781C175BB30022E447 /* Pinguide */;
+			targetProxy = 1FE819A11C175BB30022E447 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1FE819881C175BB30022E447 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FE819891C175BB30022E447 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1FE8198D1C175BB30022E447 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FE8198E1C175BB30022E447 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FE819A71C175BB30022E447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1FE819A81C175BB30022E447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1FE819AA1C175BB30022E447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pinguide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.Pinguide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FE819AB1C175BB30022E447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pinguide/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.Pinguide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1FE819AD1C175BB30022E447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PinguideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.PinguideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinguide.app/Pinguide";
+			};
+			name = Debug;
+		};
+		1FE819AE1C175BB30022E447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PinguideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.PinguideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinguide.app/Pinguide";
+			};
+			name = Release;
+		};
+		1FE819B01C175BB30022E447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PinguideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.PinguideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pinguide;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1FE819B11C175BB30022E447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PinguideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.PinguideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pinguide;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FE819741C175BB30022E447 /* Build configuration list for PBXProject "Pinguide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE819A71C175BB30022E447 /* Debug */,
+				1FE819A81C175BB30022E447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FE819A91C175BB30022E447 /* Build configuration list for PBXNativeTarget "Pinguide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE819AA1C175BB30022E447 /* Debug */,
+				1FE819AB1C175BB30022E447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1FE819AC1C175BB30022E447 /* Build configuration list for PBXNativeTarget "PinguideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE819AD1C175BB30022E447 /* Debug */,
+				1FE819AE1C175BB30022E447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1FE819AF1C175BB30022E447 /* Build configuration list for PBXNativeTarget "PinguideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE819B01C175BB30022E447 /* Debug */,
+				1FE819B11C175BB30022E447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FE819711C175BB30022E447 /* Project object */;
+}
