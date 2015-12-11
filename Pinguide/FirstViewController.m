@@ -38,9 +38,7 @@
             NSString *errorString = [error userInfo][@"error"];
             //NSLog(errorString);
         }
-    }];
-    
-    PFQuery query = [PFQuery ];
+    }];    
 }
 
 - (void)didReceiveMemoryWarning {
