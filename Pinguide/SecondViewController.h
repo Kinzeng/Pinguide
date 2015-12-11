@@ -10,6 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+@property (weak, nonatomic) NSString *objectID;
 
 @end
 
