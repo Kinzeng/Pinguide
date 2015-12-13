@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		1F51C48E1C1B71E000835981 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C48D1C1B71E000835981 /* LoginViewController.m */; };
 		1F51C4911C1B77F500835981 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C4901C1B77F500835981 /* SignUpViewController.m */; };
+		1F51C4941C1CC21C00835981 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C4931C1CC21C00835981 /* RootViewController.m */; };
 		1FE8197E1C175BB30022E447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8197D1C175BB30022E447 /* main.m */; };
 		1FE819811C175BB30022E447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819801C175BB30022E447 /* AppDelegate.m */; };
-		1FE819841C175BB30022E447 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819831C175BB30022E447 /* FirstViewController.m */; };
+		1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819831C175BB30022E447 /* PinMeViewController.m */; };
 		1FE819871C175BB30022E447 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819861C175BB30022E447 /* SecondViewController.m */; };
 		1FE8198A1C175BB30022E447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE819881C175BB30022E447 /* Main.storyboard */; };
 		1FE8198C1C175BB30022E447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE8198B1C175BB30022E447 /* Assets.xcassets */; };
@@ -55,12 +56,14 @@
 		1F51C48D1C1B71E000835981 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		1F51C48F1C1B77F500835981 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		1F51C4901C1B77F500835981 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		1F51C4921C1CC21C00835981 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1F51C4931C1CC21C00835981 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		1FE819791C175BB30022E447 /* Pinguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE8197D1C175BB30022E447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FE8197F1C175BB30022E447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1FE819801C175BB30022E447 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1FE819821C175BB30022E447 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		1FE819831C175BB30022E447 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1FE819821C175BB30022E447 /* PinMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinMeViewController.h; sourceTree = "<group>"; };
+		1FE819831C175BB30022E447 /* PinMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinMeViewController.m; sourceTree = "<group>"; };
 		1FE819851C175BB30022E447 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1FE819861C175BB30022E447 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1FE819891C175BB30022E447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,13 +155,15 @@
 			children = (
 				1FE8197F1C175BB30022E447 /* AppDelegate.h */,
 				1FE819801C175BB30022E447 /* AppDelegate.m */,
-				1FE819821C175BB30022E447 /* FirstViewController.h */,
-				1FE819831C175BB30022E447 /* FirstViewController.m */,
+				1FE819821C175BB30022E447 /* PinMeViewController.h */,
+				1FE819831C175BB30022E447 /* PinMeViewController.m */,
 				1FE819851C175BB30022E447 /* SecondViewController.h */,
 				1FE819861C175BB30022E447 /* SecondViewController.m */,
 				1F51C48C1C1B71E000835981 /* LoginViewController.h */,
 				1F51C48D1C1B71E000835981 /* LoginViewController.m */,
 				1FE819881C175BB30022E447 /* Main.storyboard */,
+				1F51C4921C1CC21C00835981 /* RootViewController.h */,
+				1F51C4931C1CC21C00835981 /* RootViewController.m */,
 				1F51C48F1C1B77F500835981 /* SignUpViewController.h */,
 				1F51C4901C1B77F500835981 /* SignUpViewController.m */,
 				1FE8198B1C175BB30022E447 /* Assets.xcassets */,
@@ -346,9 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE819871C175BB30022E447 /* SecondViewController.m in Sources */,
+				1F51C4941C1CC21C00835981 /* RootViewController.m in Sources */,
 				1FE819811C175BB30022E447 /* AppDelegate.m in Sources */,
 				1F51C4911C1B77F500835981 /* SignUpViewController.m in Sources */,
-				1FE819841C175BB30022E447 /* FirstViewController.m in Sources */,
+				1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */,
 				1FE8197E1C175BB30022E447 /* main.m in Sources */,
 				1F51C48E1C1B71E000835981 /* LoginViewController.m in Sources */,
 			);
