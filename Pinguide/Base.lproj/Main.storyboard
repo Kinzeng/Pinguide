@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Send Data-->
+        <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="firstView" id="9pv-A4-QxB" userLabel="Send Data" customClass="PinMeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstView" id="9pv-A4-QxB" userLabel="Map" customClass="PinMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -64,7 +64,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Send Data" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Pin Me" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="pinButton" destination="kpT-cA-tGz" id="gQ9-3g-drc"/>
                         <outlet property="xLabel" destination="AQu-Ru-Hit" id="xGd-CI-CJU"/>
@@ -73,9 +73,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="-374"/>
+            <point key="canvasLocation" x="1677" y="-345"/>
         </scene>
-        <!--Get Data-->
+        <!--Add Map-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController storyboardIdentifier="secondView" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -87,20 +87,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-PW-JNg">
-                                <rect key="frame" x="190" y="209" width="220" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-4f-VSU">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="156" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nm-JgD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Make Map"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="165" y="220" width="71" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="makeMap:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x37-LW-6vF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7VH-4f-VSU"/>
+                                <exclude reference="z6O-nm-JgD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7VH-4f-VSU"/>
+                                <include reference="z6O-nm-JgD"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Get Data" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Add Map" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="retrievedData" destination="uOZ-PW-JNg" id="D2u-WU-hnS"/>
+                        <outlet property="addButton" destination="z6O-nm-JgD" id="tFD-fc-t9b"/>
+                        <outlet property="nameField" destination="7VH-4f-VSU" id="EAY-Vf-o4W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -132,7 +158,7 @@
                                 <rect key="frame" x="172" y="243" width="256" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="72" y="251" width="256" height="30"/>
                                 </variation>
@@ -198,13 +224,96 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="tjx-bE-u2P" kind="relationship" relationship="viewControllers" id="KrG-HD-GDv"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="q1N-eN-j2K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63" y="0.0"/>
+        </scene>
+        <!--My Maps-->
+        <scene sceneID="N8m-cB-it6">
+            <objects>
+                <viewController id="tjx-bE-u2P" customClass="MyMapsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3fC-w3-1Dj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pDn-up-qw9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mqn-PQ-lP7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj9-Do-ILx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="60" width="400" height="740"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="tjx-bE-u2P" id="5uD-Wz-a5K"/>
+                                    <outlet property="delegate" destination="tjx-bE-u2P" id="NQs-gZ-Vy1"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="New Map"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="261" y="28" width="65" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xj9-Do-ILx" secondAttribute="trailing" id="KIG-gl-6uu"/>
+                            <constraint firstItem="Xj9-Do-ILx" firstAttribute="top" secondItem="3fC-w3-1Dj" secondAttribute="bottom" id="Ng1-AT-CZX"/>
+                            <constraint firstItem="Xj9-Do-ILx" firstAttribute="leading" secondItem="Mqn-PQ-lP7" secondAttribute="leading" id="l2B-ze-pSt"/>
+                            <constraint firstAttribute="bottom" secondItem="Xj9-Do-ILx" secondAttribute="bottom" id="m2A-kI-NVd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Xj9-Do-ILx"/>
+                                <exclude reference="w3B-CI-HQO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="KIG-gl-6uu"/>
+                                <exclude reference="Ng1-AT-CZX"/>
+                                <exclude reference="l2B-ze-pSt"/>
+                                <exclude reference="m2A-kI-NVd"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Xj9-Do-ILx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="KIG-gl-6uu"/>
+                                <include reference="Ng1-AT-CZX"/>
+                                <include reference="l2B-ze-pSt"/>
+                                <include reference="m2A-kI-NVd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="w3B-CI-HQO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Maps" id="9rx-rT-RUC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xj9-Do-ILx" id="cTY-cB-Ty8"/>
+                        <segue destination="9pv-A4-QxB" kind="show" identifier="mapPressed" id="UvR-Ue-E8q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po0-wA-QsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="-345"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Ksa-f2-fZe">
@@ -280,7 +389,7 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="185" y="302" width="189" height="30"/>
                                 </variation>
@@ -289,7 +398,7 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="185" y="355" width="189" height="30"/>
                                 </variation>

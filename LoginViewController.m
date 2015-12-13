@@ -14,7 +14,6 @@
 - (IBAction)login:(id)sender {
     [PFUser logInWithUsernameInBackground: self.usernameField.text password:self.passwordField.text block: ^(PFUser *user, NSError *error){
         if (user) {
-            NSLog(@"success");
             self.user = user;
             [self performSegueWithIdentifier: @"logInSuccess" sender: sender];
         }

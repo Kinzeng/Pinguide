@@ -10,6 +10,7 @@
 		1F51C48E1C1B71E000835981 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C48D1C1B71E000835981 /* LoginViewController.m */; };
 		1F51C4911C1B77F500835981 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C4901C1B77F500835981 /* SignUpViewController.m */; };
 		1F51C4941C1CC21C00835981 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F51C4931C1CC21C00835981 /* RootViewController.m */; };
+		1F83D94C1C1DE01D00FD982A /* MyMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D94B1C1DE01D00FD982A /* MyMapsViewController.m */; };
 		1FE8197E1C175BB30022E447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8197D1C175BB30022E447 /* main.m */; };
 		1FE819811C175BB30022E447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819801C175BB30022E447 /* AppDelegate.m */; };
 		1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819831C175BB30022E447 /* PinMeViewController.m */; };
@@ -58,6 +59,8 @@
 		1F51C4901C1B77F500835981 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		1F51C4921C1CC21C00835981 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		1F51C4931C1CC21C00835981 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1F83D94A1C1DE01D00FD982A /* MyMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapsViewController.h; sourceTree = "<group>"; };
+		1F83D94B1C1DE01D00FD982A /* MyMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapsViewController.m; sourceTree = "<group>"; };
 		1FE819791C175BB30022E447 /* Pinguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE8197D1C175BB30022E447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FE8197F1C175BB30022E447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				1F51C48C1C1B71E000835981 /* LoginViewController.h */,
 				1F51C48D1C1B71E000835981 /* LoginViewController.m */,
 				1FE819881C175BB30022E447 /* Main.storyboard */,
+				1F83D94A1C1DE01D00FD982A /* MyMapsViewController.h */,
+				1F83D94B1C1DE01D00FD982A /* MyMapsViewController.m */,
 				1F51C4921C1CC21C00835981 /* RootViewController.h */,
 				1F51C4931C1CC21C00835981 /* RootViewController.m */,
 				1F51C48F1C1B77F500835981 /* SignUpViewController.h */,
@@ -357,6 +362,7 @@
 				1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */,
 				1FE8197E1C175BB30022E447 /* main.m in Sources */,
 				1F51C48E1C1B71E000835981 /* LoginViewController.m in Sources */,
+				1F83D94C1C1DE01D00FD982A /* MyMapsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

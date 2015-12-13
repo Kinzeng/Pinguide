@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *yLabel;
 @property (weak, nonatomic) PFUser *user;
 @property (weak, nonatomic) RootViewController *root;
-@property (strong, nonatomic) CLLocationManager *manager;
-
 
 @end
 
