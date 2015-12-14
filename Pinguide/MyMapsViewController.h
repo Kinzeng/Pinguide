@@ -17,5 +17,6 @@
 @property (weak, nonatomic) PFUser *user;
 @property (weak, nonatomic) RootViewController *root;
 @property (copy, nonatomic) NSArray *myMaps;
+@property (weak, nonatomic) PFObject *selectedMap;
 
 @end

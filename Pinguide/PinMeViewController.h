@@ -7,7 +7,6 @@
 //
 
 #import "PinMeViewController.h"
-#import "SecondViewController.h"
 #import "RootViewController.h"
 #include <stdlib.h>
 #import <Parse/Parse.h>
@@ -15,11 +14,10 @@
 
 @interface PinMeViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *pinButton;
 @property (weak, nonatomic) IBOutlet UILabel *xLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yLabel;
 @property (weak, nonatomic) PFUser *user;
-@property (weak, nonatomic) RootViewController *root;
+@property (weak, nonatomic) PFObject *map;
 
 @end
 

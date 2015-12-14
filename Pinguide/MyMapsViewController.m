@@ -26,9 +26,7 @@
     PFRelation *relation = [self.user relationForKey: @"maps"];
     [[relation query] findObjectsInBackgroundWithBlock: ^(NSArray *maps, NSError *error) {
         if (!error){
-            NSLog(@"maps loaded");
             self.myMaps = maps;
-            
             [self.tableView reloadData];
         }
         else
@@ -63,7 +61,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(self.myMaps[indexPath.row][@"name"]);
+    self.selectedMap = self.myMaps[indexPath.row];
     [self performSegueWithIdentifier: @"mapPressed" sender: nil];
 }
 
@@ -117,6 +115,7 @@
     if ([segue.identifier isEqualToString: @"mapPressed"]) {
         PinMeViewController *controller = (PinMeViewController *)[segue destinationViewController];
         controller.user = self.user;
+        controller.map = self.selectedMap;
     }
 }
 

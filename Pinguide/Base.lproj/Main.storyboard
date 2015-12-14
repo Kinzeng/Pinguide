@@ -17,17 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpT-cA-tGz">
-                                <rect key="frame" x="273" y="258" width="55" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Pin Me!"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="175" y="87" width="51" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="pinMe:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kFR-JW-oM9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQu-Ru-Hit">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -48,6 +37,31 @@
                                     <rect key="frame" x="0.0" y="290" width="400" height="75"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpT-cA-tGz">
+                                <rect key="frame" x="273" y="258" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Pin Me!"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="175" y="87" width="51" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="263" y="476" width="51" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pinMe:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kFR-JW-oM9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eex-Zi-Fqt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Return"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="86" y="476" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="return:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cs0-o4-Vhb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -55,6 +69,7 @@
                             <mask key="subviews">
                                 <exclude reference="AQu-Ru-Hit"/>
                                 <exclude reference="jgI-Gg-nE9"/>
+                                <exclude reference="Eex-Zi-Fqt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -63,22 +78,27 @@
                                 <include reference="jgI-Gg-nE9"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Eex-Zi-Fqt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pin Me" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="pinButton" destination="kpT-cA-tGz" id="gQ9-3g-drc"/>
                         <outlet property="xLabel" destination="AQu-Ru-Hit" id="xGd-CI-CJU"/>
                         <outlet property="yLabel" destination="jgI-Gg-nE9" id="g3B-0N-Xqd"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="selfMapReturn" id="mSy-qv-mxs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677" y="-345"/>
         </scene>
-        <!--Add Map-->
+        <!--Search Friends-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="secondView" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondView" id="8rJ-Kc-sve" customClass="SearchFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -87,51 +107,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-KC-XxR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="122" width="400" height="678"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="DnW-JV-fqW"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="37X-wQ-FBJ"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nm-JgD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Search for Friends"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="249" y="61" width="126" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="searchFriends:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="j08-Z2-DUG"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-4f-VSU">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="156" width="97" height="30"/>
+                                    <rect key="frame" x="25" y="61" width="190" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nm-JgD">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Make Map"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="165" y="220" width="71" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="makeMap:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x37-LW-6vF"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="7VH-4f-VSU"/>
+                                <exclude reference="mqW-KC-XxR"/>
                                 <exclude reference="z6O-nm-JgD"/>
+                                <exclude reference="7VH-4f-VSU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="7VH-4f-VSU"/>
+                                <include reference="mqW-KC-XxR"/>
                                 <include reference="z6O-nm-JgD"/>
+                                <include reference="7VH-4f-VSU"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Map" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Search Friends" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="addButton" destination="z6O-nm-JgD" id="tFD-fc-t9b"/>
                         <outlet property="nameField" destination="7VH-4f-VSU" id="EAY-Vf-o4W"/>
+                        <outlet property="tableView" destination="mqW-KC-XxR" id="sXV-9i-YZZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="374"/>
+            <point key="canvasLocation" x="840" y="373.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="c3F-Ul-bfd">
@@ -226,6 +260,7 @@
                     <connections>
                         <segue destination="tjx-bE-u2P" kind="relationship" relationship="viewControllers" id="KrG-HD-GDv"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="q1N-eN-j2K"/>
+                        <segue destination="cjX-yO-nku" kind="relationship" relationship="viewControllers" id="UuH-pG-9If"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -244,6 +279,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="New Map"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="261" y="28" width="65" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj9-Do-ILx">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -256,17 +302,6 @@
                                     <outlet property="delegate" destination="tjx-bE-u2P" id="NQs-gZ-Vy1"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="New Map"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="261" y="28" width="65" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -278,8 +313,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Xj9-Do-ILx"/>
                                 <exclude reference="w3B-CI-HQO"/>
+                                <exclude reference="Xj9-Do-ILx"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KIG-gl-6uu"/>
@@ -519,9 +554,32 @@
             </objects>
             <point key="canvasLocation" x="-681" y="733"/>
         </scene>
+        <!--Friends List-->
+        <scene sceneID="MNB-ZD-wT7">
+            <objects>
+                <viewController id="cjX-yO-nku" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eFs-lh-EL7"/>
+                        <viewControllerLayoutGuide type="bottom" id="90R-Po-YSm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ty8-jm-gof">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends List" id="MjT-ey-HT3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4wv-zd-s8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="1037.25"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iu3-eq-VPo"/>
+    </inferredMetricsTieBreakers>
 </document>

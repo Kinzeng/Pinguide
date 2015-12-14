@@ -17,24 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.root = (RootViewController *)[self parentViewController];
-    self.user = [self.root getUser];
-
-    NSArray *xCoordinates = self.user[@"xCoordinates"];
-    NSArray *yCoordinates = self.user[@"yCoordinates"];
-    NSString *xString = @"";
-    NSString *yString = @"";
-    for (int i = 0; i < [xCoordinates count]; i++) {
-        xString = [xString stringByAppendingString: [NSString stringWithFormat: @"%@", [xCoordinates objectAtIndex: i]]];
-        if (i < [xCoordinates count] - 1)
-            xString = [xString stringByAppendingString: @", "];
-        
-        yString = [yString stringByAppendingString: [NSString stringWithFormat: @"%@", [yCoordinates objectAtIndex: i]]];
-        if (i < [xCoordinates count] - 1)
-            yString = [yString stringByAppendingString: @", "];
-    }
-    self.xLabel.text = xString;
-    self.yLabel.text = yString;
+    [self updateLabels];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,11 +28,47 @@
 - (IBAction)pinMe:(id)sender {
     NSNumber *x = [NSNumber numberWithInt: arc4random_uniform(1000)];
     NSNumber *y = [NSNumber numberWithInt: arc4random_uniform(1000)];
-    [self.user addObject: x forKey: @"xCoordinates"];
-    [self.user addObject: y forKey: @"yCoordinates"];
-    [self.user saveInBackground];
+    [self.map addObject: x forKey: @"latitudes"];
+    [self.map addObject: y forKey: @"longitudes"];
+    [self.map save];
+    [self.user save];
+    [self updateLabels];
 }
 
+- (IBAction)return:(id)sender {
+    [self performSegueWithIdentifier: @"selfMapReturn" sender: sender];
+}
+
+- (void)updateLabels {
+    NSArray *latitudes = self.map[@"latitudes"];
+    NSArray *longitudes = self.map[@"longitudes"];
+    if ([latitudes count] > 0) {
+        NSString *latString = @"";
+        NSString *lonString = @"";
+        for (int i = 0; i < [latitudes count]; i++) {
+            latString = [latString stringByAppendingString: [NSString stringWithFormat: @"%@", [latitudes objectAtIndex: i]]];
+            if (i < [latitudes count] - 1)
+                latString = [latString stringByAppendingString: @", "];
+        
+            lonString = [lonString stringByAppendingString: [NSString stringWithFormat: @"%@", [longitudes objectAtIndex: i]]];
+            if (i < [longitudes count] - 1)
+                lonString = [lonString stringByAppendingString: @", "];
+        }
+        self.xLabel.text = latString;
+        self.yLabel.text = lonString;
+    }
+    else {
+        self.xLabel.text = @"No coordinates";
+        self.yLabel.text = @"";
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"selfMapReturn"]) {
+        RootViewController *controller = (RootViewController *)[segue destinationViewController];
+        controller.user = self.user;
+    }
+}
 
 
 @end
