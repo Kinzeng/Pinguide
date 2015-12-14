@@ -107,18 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-KC-XxR">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="122" width="400" height="678"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="DnW-JV-fqW"/>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="37X-wQ-FBJ"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nm-JgD">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -139,21 +127,33 @@
                                     <rect key="frame" x="25" y="61" width="190" height="30"/>
                                 </variation>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-KC-XxR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="122" width="400" height="678"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="DnW-JV-fqW"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="37X-wQ-FBJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="mqW-KC-XxR"/>
                                 <exclude reference="z6O-nm-JgD"/>
                                 <exclude reference="7VH-4f-VSU"/>
+                                <exclude reference="mqW-KC-XxR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="mqW-KC-XxR"/>
                                 <include reference="z6O-nm-JgD"/>
                                 <include reference="7VH-4f-VSU"/>
+                                <include reference="mqW-KC-XxR"/>
                             </mask>
                         </variation>
                     </view>
@@ -279,17 +279,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="New Map"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="261" y="28" width="65" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj9-Do-ILx">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -302,6 +291,17 @@
                                     <outlet property="delegate" destination="tjx-bE-u2P" id="NQs-gZ-Vy1"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="New Map"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="315" y="28" width="65" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,8 +313,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="w3B-CI-HQO"/>
                                 <exclude reference="Xj9-Do-ILx"/>
+                                <exclude reference="w3B-CI-HQO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KIG-gl-6uu"/>
@@ -557,7 +557,7 @@
         <!--Friends List-->
         <scene sceneID="MNB-ZD-wT7">
             <objects>
-                <viewController id="cjX-yO-nku" sceneMemberID="viewController">
+                <viewController id="cjX-yO-nku" customClass="MyFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eFs-lh-EL7"/>
                         <viewControllerLayoutGuide type="bottom" id="90R-Po-YSm"/>
@@ -565,10 +565,37 @@
                     <view key="view" contentMode="scaleToFill" id="Ty8-jm-gof">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="87C-p4-XBG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="28" width="400" height="772"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="cjX-yO-nku" id="ayJ-nX-DsZ"/>
+                                    <outlet property="delegate" destination="cjX-yO-nku" id="wKG-rh-yt6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="87C-p4-XBG"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="87C-p4-XBG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends List" id="MjT-ey-HT3"/>
+                    <connections>
+                        <outlet property="tableView" destination="87C-p4-XBG" id="c6c-3W-cma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wv-zd-s8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

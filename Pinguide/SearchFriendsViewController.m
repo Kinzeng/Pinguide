@@ -16,8 +16,6 @@
     
     self.root = (RootViewController *)[self parentViewController];
     self.user = [self.root getUser];
-    self.names = [NSArray arrayWithObjects: @"h", @"b", @"c", nil];
-    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
