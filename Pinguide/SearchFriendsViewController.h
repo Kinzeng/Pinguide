@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "FriendViewController.h"
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) RootViewController *root;
 @property (copy, nonatomic) NSArray<NSString *> *names;
 @property (copy, nonatomic) NSArray<PFUser *> *foundFriends;
+@property (weak, nonatomic) PFUser *selectedFriend;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

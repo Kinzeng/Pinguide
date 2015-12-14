@@ -12,6 +12,8 @@
 		1F83D94C1C1DE01D00FD982A /* MyMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D94B1C1DE01D00FD982A /* MyMapsViewController.m */; };
 		1F83D9511C1E50E900FD982A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D9501C1E50E900FD982A /* LoginViewController.m */; };
 		1F83D9551C1E744700FD982A /* MyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D9541C1E744700FD982A /* MyFriendsViewController.m */; };
+		1F83D9581C1F263600FD982A /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D9571C1F263600FD982A /* FriendViewController.m */; };
+		1F83D95B1C1F2D8E00FD982A /* FriendMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83D95A1C1F2D8E00FD982A /* FriendMapViewController.m */; };
 		1FE8197E1C175BB30022E447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8197D1C175BB30022E447 /* main.m */; };
 		1FE819811C175BB30022E447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819801C175BB30022E447 /* AppDelegate.m */; };
 		1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE819831C175BB30022E447 /* PinMeViewController.m */; };
@@ -64,6 +66,10 @@
 		1F83D9521C1E510700FD982A /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1F83D9531C1E744700FD982A /* MyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFriendsViewController.h; sourceTree = "<group>"; };
 		1F83D9541C1E744700FD982A /* MyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFriendsViewController.m; sourceTree = "<group>"; };
+		1F83D9561C1F263600FD982A /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		1F83D9571C1F263600FD982A /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
+		1F83D9591C1F2D8E00FD982A /* FriendMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendMapViewController.h; sourceTree = "<group>"; };
+		1F83D95A1C1F2D8E00FD982A /* FriendMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendMapViewController.m; sourceTree = "<group>"; };
 		1FE819791C175BB30022E447 /* Pinguide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinguide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE8197D1C175BB30022E447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FE8197F1C175BB30022E447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 				1F83D9521C1E510700FD982A /* LoginViewController.h */,
 				1F83D9501C1E50E900FD982A /* LoginViewController.m */,
 				1FE819881C175BB30022E447 /* Main.storyboard */,
+				1F83D9591C1F2D8E00FD982A /* FriendMapViewController.h */,
+				1F83D95A1C1F2D8E00FD982A /* FriendMapViewController.m */,
+				1F83D9561C1F263600FD982A /* FriendViewController.h */,
+				1F83D9571C1F263600FD982A /* FriendViewController.m */,
 				1F83D9531C1E744700FD982A /* MyFriendsViewController.h */,
 				1F83D9541C1E744700FD982A /* MyFriendsViewController.m */,
 				1F83D94A1C1DE01D00FD982A /* MyMapsViewController.h */,
@@ -363,11 +373,13 @@
 				1F83D9511C1E50E900FD982A /* LoginViewController.m in Sources */,
 				1FE819871C175BB30022E447 /* SearchFriendsViewController.m in Sources */,
 				1F51C4941C1CC21C00835981 /* RootViewController.m in Sources */,
+				1F83D95B1C1F2D8E00FD982A /* FriendMapViewController.m in Sources */,
 				1FE819811C175BB30022E447 /* AppDelegate.m in Sources */,
 				1F51C4911C1B77F500835981 /* SignUpViewController.m in Sources */,
 				1FE819841C175BB30022E447 /* PinMeViewController.m in Sources */,
 				1F83D9551C1E744700FD982A /* MyFriendsViewController.m in Sources */,
 				1FE8197E1C175BB30022E447 /* main.m in Sources */,
+				1F83D9581C1F263600FD982A /* FriendViewController.m in Sources */,
 				1F83D94C1C1DE01D00FD982A /* MyMapsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

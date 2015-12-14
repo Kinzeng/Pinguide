@@ -53,8 +53,23 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedFriend = self.friends[indexPath.row];
+    [self performSegueWithIdentifier: @"tappedFriend" sender: nil];
+}
+
 - (NSString *)convertToString: (id)object {
     return [NSString stringWithFormat: @"%@", object];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"tappedFriend"]) {
+        FriendViewController *controller = (FriendViewController *)[segue destinationViewController];
+        controller.user = self.user;
+        controller.selectedFriend = self.selectedFriend;
+        controller.from = @"list";
+    }
+}
+
 
 @end

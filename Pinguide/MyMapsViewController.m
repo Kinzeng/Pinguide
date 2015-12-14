@@ -62,7 +62,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedMap = self.myMaps[indexPath.row];
-    [self performSegueWithIdentifier: @"mapPressed" sender: nil];
+    [self performSegueWithIdentifier: @"selfMapPressed" sender: nil];
 }
 
 - (IBAction)newMap:(id)sender {
@@ -112,7 +112,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString: @"mapPressed"]) {
+    if ([segue.identifier isEqualToString: @"selfMapPressed"]) {
         PinMeViewController *controller = (PinMeViewController *)[segue destinationViewController];
         controller.user = self.user;
         controller.map = self.selectedMap;

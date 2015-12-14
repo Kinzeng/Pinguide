@@ -1,18 +1,14 @@
 //
-//  PinMeViewController.m
+//  FriendMapViewController.m
 //  Pinguide
 //
-//  Created by Kevin on 12/8/15.
+//  Created by Kevin on 12/14/15.
 //  Copyright © 2015 LMMSKZ. All rights reserved.
 //
 
-#import "PinMeViewController.h"
+#import "FriendMapViewController.h"
 
-@interface PinMeViewController ()
-
-@end
-
-@implementation PinMeViewController
+@implementation FriendMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,18 +21,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pinMe:(id)sender {
-    NSNumber *x = [NSNumber numberWithInt: arc4random_uniform(1000)];
-    NSNumber *y = [NSNumber numberWithInt: arc4random_uniform(1000)];
-    [self.map addObject: x forKey: @"latitudes"];
-    [self.map addObject: y forKey: @"longitudes"];
-    [self.map save];
-    [self.user save];
-    [self updateLabels];
-}
+
 
 - (IBAction)goBack:(id)sender {
-    [self performSegueWithIdentifier: @"selfMapReturn" sender: sender];
+    [self performSegueWithIdentifier: @"friendMapReturn" sender: sender];
 }
 
 - (void)updateLabels {
@@ -49,7 +37,7 @@
             latString = [latString stringByAppendingString: [NSString stringWithFormat: @"%@", [latitudes objectAtIndex: i]]];
             if (i < [latitudes count] - 1)
                 latString = [latString stringByAppendingString: @", "];
-        
+            
             lonString = [lonString stringByAppendingString: [NSString stringWithFormat: @"%@", [longitudes objectAtIndex: i]]];
             if (i < [longitudes count] - 1)
                 lonString = [lonString stringByAppendingString: @", "];
@@ -64,11 +52,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString: @"selfMapReturn"]) {
-        RootViewController *controller = (RootViewController *)[segue destinationViewController];
+    if ([segue.identifier isEqualToString: @"friendMapReturn"]) {
+        FriendViewController *controller = (FriendViewController *)[segue destinationViewController];
         controller.user = self.user;
+        controller.selectedFriend = self.selectedFriend;
     }
 }
 
 
 @end
+

@@ -19,7 +19,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.nameField.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +47,7 @@
                 reuseIdentifier: simpleTableIdentifier];
     }
     
-    
+    cell.textLabel.textColor = [UIColor blackColor];
     cell.textLabel.text = self.names[indexPath.row];
     PFRelation *relation = [self.user relationForKey: @"friends"];
     [[relation query] findObjectsInBackgroundWithBlock: ^(NSArray *objects, NSError *error) {
@@ -63,34 +62,46 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle: @"Add Friend?"
-                                message: NULL
-                                preferredStyle: UIAlertControllerStyleAlert];
-    
-    UIAlertAction *confirmButton = [UIAlertAction
-                               actionWithTitle: @"Confirm"
-                               style: UIAlertActionStyleDefault
-                               handler: ^(UIAlertAction *action) {
-                                   PFRelation *relation = [self.user relationForKey: @"friends"];
-                                   [relation addObject: self.foundFriends[indexPath.row]];
-                                   [self.user saveInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
-                                           [self.tableView reloadData];
-                                           [alert dismissViewControllerAnimated:YES completion: nil];
-                                   }];
-                               }];
-    UIAlertAction *cancelButton = [UIAlertAction
-                                   actionWithTitle: @"Cancel"
-                                   style: UIAlertActionStyleDefault
-                                   handler: ^(UIAlertAction *action) {
-                                       [alert dismissViewControllerAnimated:YES completion:nil];
-                                   }];
-    [alert addAction: cancelButton];
-    [alert addAction: confirmButton];
-    [alert.view setNeedsLayout];
-    [self presentViewController: alert animated: YES completion: nil];
     
     [self.tableView reloadData];
+    PFRelation *relation = [self.user relationForKey: @"friends"];
+    [[relation query] findObjectsInBackgroundWithBlock: ^(NSArray *objects, NSError *error) {
+        if (!error) {
+            if ([objects containsObject: self.foundFriends[indexPath.row]]) {
+                self.selectedFriend = self.foundFriends[indexPath.row];
+                [self performSegueWithIdentifier: @"tappedFriendFromSearch" sender: nil];
+            }
+            else {
+                UIAlertController *alert = [UIAlertController
+                                            alertControllerWithTitle: @"Add Friend?"
+                                            message: NULL
+                                            preferredStyle: UIAlertControllerStyleAlert];
+                
+                UIAlertAction *confirmButton = [UIAlertAction
+                                                actionWithTitle: @"Confirm"
+                                                style: UIAlertActionStyleDefault
+                                                handler: ^(UIAlertAction *action) {
+                                                    PFRelation *relation = [self.user relationForKey: @"friends"];
+                                                    [relation addObject: self.foundFriends[indexPath.row]];
+                                                    [self.user saveInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
+                                                        [self.tableView reloadData];
+                                                        [alert dismissViewControllerAnimated:YES completion: nil];
+                                                    }];
+                                                }];
+                UIAlertAction *cancelButton = [UIAlertAction
+                                               actionWithTitle: @"Cancel"
+                                               style: UIAlertActionStyleDefault
+                                               handler: ^(UIAlertAction *action) {
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                               }];
+                [alert addAction: cancelButton];
+                [alert addAction: confirmButton];
+                [alert.view setNeedsLayout];
+                [self presentViewController: alert animated: YES completion: nil];
+                [self.tableView reloadData];
+            }
+        }
+    }];
 
 }
 
@@ -102,15 +113,12 @@
     
     PFQuery *query = [PFUser query];
     
-    NSLog([self.user username]);
-    [query whereKey: @"username" notEqualTo: [self.user username]];
-    
-    
-
     for (int i = 0; i < [input count]; i++) {
         NSArray<PFQuery *> *subs = [NSArray array];
-        subs = [subs arrayByAddingObject: [[PFUser query] whereKey:@"firstName" containsString: input[i]]];
-        subs = [subs arrayByAddingObject: [[PFUser query] whereKey:@"lastName" containsString: input[i]]];
+        
+        subs = [subs arrayByAddingObject: [PFQuery queryWithClassName:@"_User" predicate: [NSPredicate predicateWithFormat: @"firstName BEGINSWITH[cd] %@", input[i]]]];
+        subs = [subs arrayByAddingObject: [PFQuery queryWithClassName:@"_User" predicate: [NSPredicate predicateWithFormat: @"lastName BEGINSWITH[cd] %@", input[i]]]];
+        subs = [subs arrayByAddingObject: [PFQuery queryWithClassName:@"_User" predicate: [NSPredicate predicateWithFormat: @"username BEGINSWITH[cd] %@", input[i]]]];
         
         query = [PFQuery orQueryWithSubqueries: subs];
     }
@@ -125,9 +133,10 @@
                 NSArray *foundFriends = [NSMutableArray array];
                 for (int i = 0; i < [objects count]; i++) {
                     if (![[self.user username] isEqualToString: [objects[i] username]]) {
-                        NSString *name = [[[self convertToString: objects[i][@"firstName"]]
-                                        stringByAppendingString: @" "]
-                                        stringByAppendingString: [self convertToString: objects[i][@"lastName"]]];
+                        NSString *name = [NSString stringWithFormat: @"%@ %@ (%@)",
+                                            [self convertToString: objects[i][@"firstName"]],
+                                            [self convertToString: objects[i][@"lastName"]],
+                                            [self convertToString: objects[i][@"username"]]];
                         foundNames = [foundNames arrayByAddingObject: name];
                         foundFriends = [foundFriends arrayByAddingObject: objects[i]];
                     }
@@ -142,6 +151,15 @@
 
 - (NSString *)convertToString: (id)object {
     return [NSString stringWithFormat: @"%@", object];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"tappedFriendFromSearch"]) {
+        FriendViewController *controller = (FriendViewController *)[segue destinationViewController];
+        controller.user = self.user;
+        controller.selectedFriend = self.selectedFriend;
+        controller.from = @"search";
+    }
 }
 
 @end

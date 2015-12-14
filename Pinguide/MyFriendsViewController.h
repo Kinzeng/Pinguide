@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "FriendViewController.h"
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
@@ -16,5 +17,6 @@
 @property (copy, nonatomic) NSArray<PFUser *> *friends;
 @property (weak, nonatomic) RootViewController *root;
 @property (weak, nonatomic) PFUser *user;
+@property (weak, nonatomic) PFUser *selectedFriend;
 
 @end

@@ -45,21 +45,21 @@
                                     <rect key="frame" x="175" y="87" width="51" height="30"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="263" y="476" width="51" height="30"/>
+                                    <rect key="frame" x="266" y="476" width="51" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="pinMe:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kFR-JW-oM9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eex-Zi-Fqt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-2o-tza">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Return"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="86" y="476" width="46" height="30"/>
+                                    <rect key="frame" x="84" y="476" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="return:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cs0-o4-Vhb"/>
+                                    <action selector="goBack:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Tfw-XT-SSL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,7 +69,7 @@
                             <mask key="subviews">
                                 <exclude reference="AQu-Ru-Hit"/>
                                 <exclude reference="jgI-Gg-nE9"/>
-                                <exclude reference="Eex-Zi-Fqt"/>
+                                <exclude reference="qmZ-2o-tza"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -80,11 +80,10 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Eex-Zi-Fqt"/>
+                                <include reference="qmZ-2o-tza"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pin Me" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="xLabel" destination="AQu-Ru-Hit" id="xGd-CI-CJU"/>
                         <outlet property="yLabel" destination="jgI-Gg-nE9" id="g3B-0N-Xqd"/>
@@ -93,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="-345"/>
+            <point key="canvasLocation" x="1675.5" y="-950.25"/>
         </scene>
         <!--Search Friends-->
         <scene sceneID="wg7-f3-ORb">
@@ -107,53 +106,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nm-JgD">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Search for Friends"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="249" y="61" width="126" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="searchFriends:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="j08-Z2-DUG"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-4f-VSU">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="25" y="61" width="190" height="30"/>
-                                </variation>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-KC-XxR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="122" width="400" height="678"/>
+                                    <rect key="frame" x="0.0" y="74" width="400" height="726"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="DnW-JV-fqW"/>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="37X-wQ-FBJ"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Friends..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VH-4f-VSU">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="28" width="360" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="searchFriends:" destination="8rJ-Kc-sve" eventType="editingChanged" id="W1c-fQ-6l7"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="z6O-nm-JgD"/>
-                                <exclude reference="7VH-4f-VSU"/>
                                 <exclude reference="mqW-KC-XxR"/>
+                                <exclude reference="7VH-4f-VSU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="z6O-nm-JgD"/>
-                                <include reference="7VH-4f-VSU"/>
                                 <include reference="mqW-KC-XxR"/>
+                                <include reference="7VH-4f-VSU"/>
                             </mask>
                         </variation>
                     </view>
@@ -161,11 +150,12 @@
                     <connections>
                         <outlet property="nameField" destination="7VH-4f-VSU" id="EAY-Vf-o4W"/>
                         <outlet property="tableView" destination="mqW-KC-XxR" id="sXV-9i-YZZ"/>
+                        <segue destination="amm-ND-gVM" kind="show" identifier="tappedFriendFromSearch" id="ub5-ny-1J7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="373.5"/>
+            <point key="canvasLocation" x="877.5" y="0.0"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="c3F-Ul-bfd">
@@ -265,7 +255,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="0.0"/>
+            <point key="canvasLocation" x="51" y="0.0"/>
         </scene>
         <!--My Maps-->
         <scene sceneID="N8m-cB-it6">
@@ -279,76 +269,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj9-Do-ILx">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="60" width="400" height="740"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="tjx-bE-u2P" id="5uD-Wz-a5K"/>
-                                    <outlet property="delegate" destination="tjx-bE-u2P" id="NQs-gZ-Vy1"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-CI-HQO">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="New Map"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="315" y="28" width="65" height="30"/>
+                                    <rect key="frame" x="315" y="20" width="65" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="newMap:" destination="tjx-bE-u2P" eventType="touchUpInside" id="qSd-f8-OEg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Maps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CU-LG-zhf">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="148" y="20" width="105" height="40"/>
+                                </variation>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-JT-0QV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="tjx-bE-u2P" id="ikd-qD-kd9"/>
+                                    <outlet property="delegate" destination="tjx-bE-u2P" id="cfk-jW-LSm"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Xj9-Do-ILx" secondAttribute="trailing" id="KIG-gl-6uu"/>
-                            <constraint firstItem="Xj9-Do-ILx" firstAttribute="top" secondItem="3fC-w3-1Dj" secondAttribute="bottom" id="Ng1-AT-CZX"/>
-                            <constraint firstItem="Xj9-Do-ILx" firstAttribute="leading" secondItem="Mqn-PQ-lP7" secondAttribute="leading" id="l2B-ze-pSt"/>
-                            <constraint firstAttribute="bottom" secondItem="Xj9-Do-ILx" secondAttribute="bottom" id="m2A-kI-NVd"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Xj9-Do-ILx"/>
                                 <exclude reference="w3B-CI-HQO"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="KIG-gl-6uu"/>
-                                <exclude reference="Ng1-AT-CZX"/>
-                                <exclude reference="l2B-ze-pSt"/>
-                                <exclude reference="m2A-kI-NVd"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Xj9-Do-ILx"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="KIG-gl-6uu"/>
-                                <include reference="Ng1-AT-CZX"/>
-                                <include reference="l2B-ze-pSt"/>
-                                <include reference="m2A-kI-NVd"/>
+                                <exclude reference="5CU-LG-zhf"/>
+                                <exclude reference="cEf-JT-0QV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="w3B-CI-HQO"/>
+                                <include reference="5CU-LG-zhf"/>
+                                <include reference="cEf-JT-0QV"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Maps" id="9rx-rT-RUC"/>
                     <connections>
-                        <outlet property="tableView" destination="Xj9-Do-ILx" id="cTY-cB-Ty8"/>
-                        <segue destination="9pv-A4-QxB" kind="show" identifier="mapPressed" id="UvR-Ue-E8q"/>
+                        <outlet property="tableView" destination="cEf-JT-0QV" id="evd-Dt-R30"/>
+                        <segue destination="9pv-A4-QxB" kind="show" identifier="selfMapPressed" id="UvR-Ue-E8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Po0-wA-QsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="-345"/>
+            <point key="canvasLocation" x="877.5" y="-950.25"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Ksa-f2-fZe">
@@ -552,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bg6-OW-1DK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-681" y="733"/>
+            <point key="canvasLocation" x="-681" y="1001"/>
         </scene>
         <!--Friends List-->
         <scene sceneID="MNB-ZD-wT7">
@@ -595,18 +575,162 @@
                     <tabBarItem key="tabBarItem" title="Friends List" id="MjT-ey-HT3"/>
                     <connections>
                         <outlet property="tableView" destination="87C-p4-XBG" id="c6c-3W-cma"/>
+                        <segue destination="amm-ND-gVM" kind="show" identifier="tappedFriend" id="Scd-18-NWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wv-zd-s8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="1037.25"/>
+            <point key="canvasLocation" x="878" y="1205"/>
+        </scene>
+        <!--Friend View Controller-->
+        <scene sceneID="XKd-YX-9C0">
+            <objects>
+                <viewController id="amm-ND-gVM" customClass="FriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YGf-c4-GVT"/>
+                        <viewControllerLayoutGuide type="bottom" id="MzH-am-3fR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eSo-MB-qGu">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxa-Zp-vH1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="39"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMJ-et-3mc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Return"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="11" y="25" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="goBack:" destination="amm-ND-gVM" eventType="touchUpInside" id="mAg-bq-MOb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-IC-leY">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="67" width="400" height="733"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="amm-ND-gVM" id="2gM-W0-opV"/>
+                                    <outlet property="delegate" destination="amm-ND-gVM" id="geD-mt-jTI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qxa-Zp-vH1"/>
+                                <exclude reference="pMJ-et-3mc"/>
+                                <exclude reference="A5S-IC-leY"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qxa-Zp-vH1"/>
+                                <include reference="pMJ-et-3mc"/>
+                                <include reference="A5S-IC-leY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="friendLabel" destination="qxa-Zp-vH1" id="AtT-ZL-OQt"/>
+                        <outlet property="tableView" destination="A5S-IC-leY" id="5cM-IP-4Yr"/>
+                        <segue destination="Jbz-qH-WcO" kind="show" identifier="friendMapPressed" id="OPG-Ff-Kbt"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="friendReturn" id="M89-Sq-p74"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gys-c1-SyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675.5" y="1204.5"/>
+        </scene>
+        <!--Friend Map View Controller-->
+        <scene sceneID="Buc-Kf-ZlU">
+            <objects>
+                <viewController id="Jbz-qH-WcO" customClass="FriendMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8FH-bn-76l"/>
+                        <viewControllerLayoutGuide type="bottom" id="0tH-ks-8GS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTz-oH-ktq">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2I-7H-76W">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="228" width="400" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZp-5g-voS">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="325" width="400" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvr-9X-z1I">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Return"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="444" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="goBack:" destination="Jbz-qH-WcO" eventType="touchUpInside" id="fBs-ZS-nkV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="r2I-7H-76W"/>
+                                <exclude reference="WZp-5g-voS"/>
+                                <exclude reference="hvr-9X-z1I"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="r2I-7H-76W"/>
+                                <include reference="WZp-5g-voS"/>
+                                <include reference="hvr-9X-z1I"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="xLabel" destination="r2I-7H-76W" id="gfx-87-Rb3"/>
+                        <outlet property="yLabel" destination="WZp-5g-voS" id="6sK-9c-8rG"/>
+                        <segue destination="amm-ND-gVM" kind="show" identifier="friendMapReturn" id="ZHw-Az-29u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F84-62-b7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455.5" y="1204.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iu3-eq-VPo"/>
+        <segue reference="ub5-ny-1J7"/>
+        <segue reference="M89-Sq-p74"/>
     </inferredMetricsTieBreakers>
 </document>
