@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "PinMeViewController.h"
+#import "LoginViewController.h"
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
@@ -18,5 +19,6 @@
 @property (weak, nonatomic) RootViewController *root;
 @property (copy, nonatomic) NSArray *myMaps;
 @property (weak, nonatomic) PFObject *selectedMap;
+@property (weak, nonatomic) IBOutlet UITabBarItem *tabBarMaps;
 
 @end

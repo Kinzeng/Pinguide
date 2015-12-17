@@ -11,7 +11,9 @@
 
 @implementation SignUpViewController
 
+//called when the user taps on the sign in button
 - (IBAction)signUp:(id)sender {
+    //alerts the user if there are empty fields
     if ([self.firstField.text isEqualToString: @""] || [self.lastField.text isEqualToString: @""] || [self.usernameField.text isEqualToString: @""] || [self.emailField.text isEqualToString: @""] || [self.passwordField.text isEqualToString: @""] || [self.confirmField.text isEqualToString: @""]) {
         UIAlertController *alert=   [UIAlertController
                                      alertControllerWithTitle: @"Missing Information"
@@ -28,6 +30,7 @@
         [alert addAction: okButton];
         [self presentViewController: alert animated: YES completion: nil];
     }
+    //alerts the user if the password fields don't match
     else if (![self.passwordField.text isEqualToString: self.confirmField.text]) {
         UIAlertController *alert=   [UIAlertController
                                      alertControllerWithTitle: @"Passwords Don't Match"
@@ -44,6 +47,7 @@
         [alert addAction: okButton];
         [self presentViewController: alert animated: YES completion: nil];
     }
+    //signs the user up using Parse and the information they entered
     else {
         PFUser *user = [PFUser user];
         user.username = self.usernameField.text;
@@ -53,6 +57,7 @@
         user[@"lastName"] = self.lastField.text;
         
         [user signUpInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
+            //if everything works out, show an alert telling the user that it was successful and then segue back to login
             if (succeeded) {
                 UIAlertController *alert=   [UIAlertController
                                              alertControllerWithTitle: @"Sign Up Success!"
@@ -70,6 +75,7 @@
                 [alert addAction: okButton];
                 [self presentViewController: alert animated: YES completion: nil];
             }
+            //otherwise, show an alert with what's wrong
             else {
                 UIAlertController *alert=   [UIAlertController
                                              alertControllerWithTitle: @"Sign Up Error"
@@ -90,7 +96,9 @@
     }
 }
 
+//called when the user taps on the cancel button
 - (IBAction)cancel:(id)sender {
+    //segue back to log in
     [self performSegueWithIdentifier: @"returnToLogin" sender: sender];
 }
 

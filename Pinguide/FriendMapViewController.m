@@ -12,45 +12,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self updateLabels];
+
+    [self startMap];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
+//called when the user taps on the return button
 - (IBAction)goBack:(id)sender {
     [self performSegueWithIdentifier: @"friendMapReturn" sender: sender];
 }
 
-- (void)updateLabels {
-    NSArray *latitudes = self.map[@"latitudes"];
-    NSArray *longitudes = self.map[@"longitudes"];
-    if ([latitudes count] > 0) {
-        NSString *latString = @"";
-        NSString *lonString = @"";
-        for (int i = 0; i < [latitudes count]; i++) {
-            latString = [latString stringByAppendingString: [NSString stringWithFormat: @"%@", [latitudes objectAtIndex: i]]];
-            if (i < [latitudes count] - 1)
-                latString = [latString stringByAppendingString: @", "];
-            
-            lonString = [lonString stringByAppendingString: [NSString stringWithFormat: @"%@", [longitudes objectAtIndex: i]]];
-            if (i < [longitudes count] - 1)
-                lonString = [lonString stringByAppendingString: @", "];
-        }
-        self.xLabel.text = latString;
-        self.yLabel.text = lonString;
+//change what the map shows based on all the pins
+- (void)zoom {
+    MKMapRect zoomRect = MKMapRectNull;
+    for (id <MKAnnotation> annotation in self.mapView.annotations) {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        
+        //create a rectangle for the current pin
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+        
+        //if it's the first pin, set it as the rectangle
+        if (MKMapRectIsNull(zoomRect))
+            zoomRect = pointRect;
+        //otherwise union all the rectangles together
+        else
+            zoomRect = MKMapRectUnion(zoomRect, pointRect);
     }
-    else {
-        self.xLabel.text = @"No coordinates";
-        self.yLabel.text = @"";
-    }
+    //set the map's view range to the entire rectangle
+    [self.mapView setVisibleMapRect: zoomRect animated:YES];
 }
 
+//initialize the map view
+- (void)startMap {
+    
+    //grab the data related to the current map from the "Map" object on Parse
+    self.mapLabel.text = self.map[@"name"];
+    NSArray *latitudes = self.map[@"latitudes"];
+    NSArray *longitudes = self.map[@"longitudes"];
+    NSArray *places = self.map[@"places"];
+    NSArray *addresses = self.map[@"addresses" ];
+    
+    //add a pin for each data value in the arrays to the map
+    for (int i = 0; i < [latitudes count]; i++) {
+        //convert to a double
+        double lat = [latitudes[i] doubleValue];
+        double lon = [longitudes[i] doubleValue];
+        
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        //set the pin's values accordingly
+        point.coordinate = CLLocationCoordinate2DMake(lat, lon);
+        point.title = [NSString stringWithFormat: @"%@", places[i]];
+        point.subtitle = [NSString stringWithFormat: @"%@", addresses[i]];
+        
+        //add the pin to the map
+        [self.mapView addAnnotation:point];
+    }
+    
+    //show the map and change the view accordingly
+    [self.mapView showAnnotations: self.mapView.annotations animated: YES];
+    [self zoom];
+}
+
+//pass the current user and selected friend back to the friend view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString: @"friendMapReturn"]) {
         FriendViewController *controller = (FriendViewController *)[segue destinationViewController];

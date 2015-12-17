@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 #import <Parse/Parse.h>
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -25,6 +27,10 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [GMSServices provideAPIKey:@"AIzaSyAUGn1Jvtzx0lkqTEMiQSHfBd445RewlyI"];
+    
+    //[PFUser logOut];
+
     return YES;
 }
 
@@ -48,9 +54,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [PFUser logOutInBackgroundWithBlock: ^(NSError *error) {
-        if (!error) NSLog(@"Logged Out");
-    }];
 }
 
 @end

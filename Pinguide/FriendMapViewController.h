@@ -9,13 +9,15 @@
 #import "FriendViewController.h"
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface FriendMapViewController : UIViewController
+@interface FriendMapViewController : UIViewController <MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *xLabel;
-@property (weak, nonatomic) IBOutlet UILabel *yLabel;
 @property (weak, nonatomic) PFUser *user;
 @property (weak, nonatomic) PFUser *selectedFriend;
 @property (weak, nonatomic) PFObject *map;
+@property (weak, nonatomic) IBOutlet UILabel *mapLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end
